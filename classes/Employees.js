@@ -4,12 +4,16 @@ class Employees {
   static allEmployees = [];
 
   static getEmployees() {
-    return this.allEmployees;
+    return Employees.allEmployees;
   }
 
   static getTotalPayroll() {
     let total = 0;
-    total = this.Employees["#salary"];
+    for (let x of Employees.allEmployees) {
+      let salary = x.getSalary();
+      console.log(x.getSalary());
+      total += salary;
+    }
     return total;
   }
 
